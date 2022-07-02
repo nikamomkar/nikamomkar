@@ -1,0 +1,34 @@
+fun main() {
+   var s1=Student()
+   s1.teaches() 
+   s1.Grade()
+   var p1=Parent()
+   p1.teaches()
+}
+//Interface teacher
+interface Teacher{
+   fun teaches()
+   open fun teach(){ 
+       var id:Int=0
+       println("id of teacher =$id")
+   }
+}
+ class Student():Teacher{
+    override fun teaches(){
+        var id: Int=1
+        println("id of student =$id")
+        super.teach() //calling base class function
+       
+    }
+    //Grade function is not defined neither declare in interface
+    fun Grade(){
+          println("Grade")
+         }
+}
+class Parent():Teacher{
+    override fun teaches(){
+        var id: Int=2
+        println("id of Parent =$id")
+        super.teach()  //calling base class function
+    }
+}
